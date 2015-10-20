@@ -1,0 +1,30 @@
+<h1>Users Management</h1>
+
+<table>
+  <tr text-align="left">
+	<th>Name</th>
+	<th>Email</th>
+	<th>Adress</th>
+    </tr>
+
+
+  <tbody>	
+     	<% @users.each do |user| %>
+			     	 	<tr>
+	  	<th><%= user.name %></td>
+	  	<th><%= user.email%></td>
+	  	<th><%= user.address%></td>
+        	<td><%= link_to 'Show', user %></td>
+        	<td><%= link_to 'Edit', edit_user_path(user) %></td>
+        	<td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      	</tr>
+
+    <% end %>
+  </tbody>
+	
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
+<h3><%= link_to 'Go to Item List', items_path %></h3>

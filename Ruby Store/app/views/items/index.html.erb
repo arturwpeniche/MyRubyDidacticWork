@@ -1,0 +1,31 @@
+
+<h1>Stock Management</h1>
+
+<table>
+    <tr text-align="left">
+      
+	<th>Name</th>
+	<th>Price</th>
+	<th>Stock</th>
+    </tr>
+  
+
+<tbody>
+			<% @items.each do |item| %>
+			<tr>     	 	
+	  	<th><%= item.name %></td>
+	  	<th><%= item.price%></td>
+	  	<th><%= item.stock%></td>
+        	<td><%= link_to 'Show', item %></td>
+        	<td><%= link_to 'Edit', edit_item_path(item) %></td>
+        	<td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      	</tr>
+
+    <% end %>
+
+	</tbody>
+
+</table>
+<br>
+<%= link_to 'New Item', new_item_path %>
+<h3><%= link_to 'Go to Users List', users_path %></h3>

@@ -1,0 +1,26 @@
+<h1>Items</h1>
+
+<table>
+    <tr text-align="left">
+      
+	<th>Name</th>
+	<th>Price</th>
+	<th>Stock</th>
+    </tr>
+  
+
+<tbody>
+			<% @items.each do |item| %>
+			     	 	<tr>
+	  	<th><%= item.name %></td>
+	  	<th><%= item.price%></td>
+	  	<th><%= item.stock%></td>
+
+        	<td><%= link_to 'show', item %></td>
+        	      	</tr>
+
+    <% end %>
+
+	</tbody>
+
+</table>
